@@ -133,9 +133,10 @@ GameObject:
   - component: {fileID: 191148785}
   - component: {fileID: 191148786}
   - component: {fileID: 191148787}
+  - component: {fileID: 191148788}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,7 +243,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   moveSpeed: 6
+  bullet: {fileID: 2864353299407139773, guid: 47b07be3965a06947b49c73aedc6ab06, type: 3}
   moveAction: {fileID: -1986486672984512536, guid: 0ba327c32d5ce504282c47c511ef8ad6, type: 3}
+  fireAction: {fileID: -232035260661218785, guid: 0ba327c32d5ce504282c47c511ef8ad6, type: 3}
 --- !u!114 &191148786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +288,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fdc81dbe8fd1b3409daa425e0c3171e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Move
+--- !u!114 &191148788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191148781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362e5c3adee0d1c4387e4d1264400cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::C_Fire
 --- !u!1 &975869873
 GameObject:
   m_ObjectHideFlags: 0
