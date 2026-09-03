@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   moveSpeed: 6
-  bullet: {fileID: 2864353299407139773, guid: 47b07be3965a06947b49c73aedc6ab06, type: 3}
+  bulletPrefab: {fileID: 2864353299407139773, guid: 47b07be3965a06947b49c73aedc6ab06, type: 3}
   moveAction: {fileID: -1986486672984512536, guid: 0ba327c32d5ce504282c47c511ef8ad6, type: 3}
   fireAction: {fileID: -232035260661218785, guid: 0ba327c32d5ce504282c47c511ef8ad6, type: 3}
 --- !u!114 &191148786

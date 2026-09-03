@@ -1,6 +1,4 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
@@ -11,7 +9,7 @@ public class PlayerScript : MonoBehaviour
     private C_Move move;
     private C_Fire fire;
 
-    public GameObject bullet;
+    [SerializeField] private GameObject bulletPrefab;
 
     public InputActionReference moveAction;
     public InputActionReference fireAction;
@@ -41,6 +39,6 @@ public class PlayerScript : MonoBehaviour
 
     private void Shoot(InputAction.CallbackContext obj)
     {
-        fire.Fire(transform.position, transform.rotation, bullet);
+        fire.Fire(bulletPrefab);
     }
 }

@@ -2,8 +2,16 @@ using UnityEngine;
 
 public class C_Fire : MonoBehaviour
 {
-    public void Fire(Vector3 spawnPosition,Quaternion spawnRotation, GameObject bullet)
+    public void Fire(GameObject bulletPrefab)
     {
-        Instantiate(bullet, spawnPosition, spawnRotation);
+        GameObject bulletObject = Instantiate(
+            bulletPrefab,
+            transform.position,
+            transform.rotation
+            );
+
+        BulletScript bullet = bulletObject.GetComponent<BulletScript>();
+
+        bullet.Initialize(gameObject);
     }
 }
