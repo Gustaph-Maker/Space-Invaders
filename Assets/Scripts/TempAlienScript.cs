@@ -5,7 +5,6 @@ public class TempAlienScript : MonoBehaviour
     private C_Fire fire;
     private float timer;
     private float shootFrequenzy = 1f;
-    [SerializeField] private GameObject bulletPrefab;
 
     private void Start()
     {
@@ -20,7 +19,7 @@ public class TempAlienScript : MonoBehaviour
 
         if(timer >= shootFrequenzy)
         {
-            fire.Fire(bulletPrefab);
+            fire.Fire();
             
             
             timer = 0f;

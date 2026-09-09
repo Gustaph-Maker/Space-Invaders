@@ -9,8 +9,6 @@ public class PlayerScript : MonoBehaviour
     private C_Move move;
     private C_Fire fire;
 
-    [SerializeField] private GameObject bulletPrefab;
-
     public InputActionReference moveAction;
     public InputActionReference fireAction;
 
@@ -39,6 +37,6 @@ public class PlayerScript : MonoBehaviour
 
     private void Shoot(InputAction.CallbackContext obj)
     {
-        fire.Fire(bulletPrefab);
+        fire.Fire();
     }
 }

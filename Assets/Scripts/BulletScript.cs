@@ -3,15 +3,16 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public float bulletSpeed;
-    private Vector3 direction = Vector3.up;
+    private Vector3 bulletDirection;
     private float offScreen = 6f;
     private GameObject owner;
     private Team ownerTeam;
     private C_Move move;
 
-    public void Initialize(GameObject owner)
+    public void Initialize(GameObject owner, Vector3 bulletDirection)
     {
         this.owner = owner;
+        this.bulletDirection = bulletDirection;
         C_TeamMember teamMember = owner.GetComponent<C_TeamMember>();
 
         if(teamMember != null)
@@ -27,7 +28,7 @@ public class BulletScript : MonoBehaviour
 
     private void Update()
     {
-        move.Movement(bulletSpeed,direction);
+        move.Movement(bulletSpeed,bulletDirection);
 
         if (transform.position.y > offScreen || transform.position.y < -offScreen)
             Destroy(gameObject);

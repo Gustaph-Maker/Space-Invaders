@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class C_Fire : MonoBehaviour
 {
-    public void Fire(GameObject bulletPrefab)
+    [SerializeField] private Vector3 bulletDirection;
+    [SerializeField] private GameObject bulletPrefab;
+
+    public void Fire()
     {
         GameObject bulletObject = Instantiate(
             bulletPrefab,
@@ -12,6 +15,6 @@ public class C_Fire : MonoBehaviour
 
         BulletScript bullet = bulletObject.GetComponent<BulletScript>();
 
-        bullet.Initialize(gameObject);
+        bullet.Initialize(gameObject, bulletDirection);
     }
 }
