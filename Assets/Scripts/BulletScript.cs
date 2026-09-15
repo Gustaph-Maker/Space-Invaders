@@ -49,5 +49,6 @@ public class BulletScript : MonoBehaviour
         }
 
         Debug.Log("Bullet hit: " + other.gameObject.name);
+        
     }
 }

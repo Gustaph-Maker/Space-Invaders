@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerScript : MonoBehaviour
 {
     public float moveSpeed = 10f;
+    private float minX = -8f;
+    private float maxX = 8f;
 
     private Vector2 moveDirection;
     private C_Move move;
@@ -31,8 +33,13 @@ public class PlayerScript : MonoBehaviour
     private void Update()
     {
         moveDirection = moveAction.action.ReadValue<Vector2>();
+
         Vector3 direction = new Vector3(moveDirection.x, 0, 0);
         move.Movement(moveSpeed, direction);
+
+        Vector3 position = transform.position;
+        position.x = Mathf.Clamp(position.x, minX, maxX);
+        transform.position = position;
     }
 
     private void Shoot(InputAction.CallbackContext obj)

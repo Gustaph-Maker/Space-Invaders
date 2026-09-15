@@ -102,9 +102,9 @@ GameObject:
   - component: {fileID: 3716998141069148238}
   - component: {fileID: 7782826744677377752}
   - component: {fileID: 8114017992829653682}
+  - component: {fileID: -1275729633144540030}
   - component: {fileID: 2233740141044396723}
   - component: {fileID: 7891858730695029875}
-  - component: {fileID: 328032093977408443}
   - component: {fileID: 6136966608648274855}
   m_Layer: 0
   m_Name: Alien
@@ -202,6 +202,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-1275729633144540030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3751426293058323845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c438960c2b3b65d4792b2ed6274885ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlienScript
+  moveDistance: 10
+  shootChance: 25
 --- !u!114 &2233740141044396723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,18 +241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::C_TeamMember
   team: 1
---- !u!114 &328032093977408443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3751426293058323845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cec637a6df06814db6cb4423655d08e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TempAlienScript
 --- !u!114 &6136966608648274855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,7 +425,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
