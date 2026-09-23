@@ -4,7 +4,7 @@ using UnityEngine;
 public class AlienArmyScript : MonoBehaviour
 {
     private C_AlienFactory alienFactory;
-    private List<GameObject> aliens = new List<GameObject>();
+    private List<AlienScript> aliens = new List<AlienScript>();
     private float timer;
     private Vector3 moveDirection;
 
@@ -24,10 +24,10 @@ public class AlienArmyScript : MonoBehaviour
     {
         if(timer >= 1)
         {
-            foreach(GameObject alien in aliens)
+            foreach(AlienScript alien in aliens)
             {
-                alien.GetComponent<AlienScript>().Move(moveDirection);
-                alien.GetComponent<AlienScript>().Shoot();
+                alien.Move(moveDirection);
+                alien.Shoot();
             }
 
             timer = 0;
@@ -48,7 +48,7 @@ public class AlienArmyScript : MonoBehaviour
                     0
                 );
 
-                GameObject alien = alienFactory.CreateAlien(position);
+                AlienScript alien = alienFactory.CreateAlien(position);
                 aliens.Add(alien);
             }
         }
@@ -58,9 +58,9 @@ public class AlienArmyScript : MonoBehaviour
     {
         moveDirection *= -1; 
 
-        foreach (GameObject alien in aliens)
+        foreach (AlienScript alien in aliens)
         {
-            alien.GetComponent<AlienScript>().Move(Vector3.down);
+            alien.Move(Vector3.down);
         }
     }
 }

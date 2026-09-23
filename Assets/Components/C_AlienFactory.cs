@@ -4,7 +4,7 @@ public class C_AlienFactory : MonoBehaviour
 {
     [SerializeField] private GameObject alienPrefab;
 
-    public GameObject CreateAlien(Vector3 position)
+    public AlienScript CreateAlien(Vector3 position)
     {
         GameObject alien = Instantiate(
             alienPrefab,
@@ -12,6 +12,16 @@ public class C_AlienFactory : MonoBehaviour
             Quaternion.identity
         );
 
-        return alien;
+        AlienScript alienScript = alien.GetComponent<AlienScript>();
+
+        if(alienScript == null)
+        {
+            Debug.Log("Alien Prefab is missing AlienScipt component!");
+
+            Destroy(alien);
+            return null;
+        }
+
+        return alienScript;
     }
 }

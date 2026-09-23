@@ -6,6 +6,11 @@ public class BorderScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        AlienArmy.BorderCollision();
+        C_TeamMember teamMember = collision.GetComponent<C_TeamMember>();
+
+        if(teamMember != null && teamMember.Team == Team.Alien)
+        {
+            AlienArmy.BorderCollision();
+        }
     }
 }
