@@ -7,6 +7,8 @@ public class AlienArmyScript : MonoBehaviour
     private List<AlienScript> aliens = new List<AlienScript>();
     private float timer;
     private Vector3 moveDirection;
+    private bool hasCollidedWithBorder;
+    [SerializeField] private float actionInterval = 1f;
 
     private void Awake()
     {
@@ -22,7 +24,9 @@ public class AlienArmyScript : MonoBehaviour
 
     private void Update()
     {
-        if(timer >= 1)
+        hasCollidedWithBorder = false;
+
+        if(timer >= actionInterval)
         {
             foreach(AlienScript alien in aliens)
             {
@@ -49,18 +53,47 @@ public class AlienArmyScript : MonoBehaviour
                 );
 
                 AlienScript alien = alienFactory.CreateAlien(position);
+                C_Damageable damageable = alien.GetComponent<C_Damageable>();
+
+                damageable.Died += AlienDied;
+
                 aliens.Add(alien);
             }
         }
     }
 
+    private void AlienDied(C_Damageable deadAlien)
+    {
+        aliens.Remove(deadAlien.GetComponent<AlienScript>());
+
+        int remainingAliens = aliens.Count;
+
+        //If half of aliens remains act twice as often
+        if (remainingAliens <= 27)
+            actionInterval = 0.5f;
+        //If one alien remains act 10 times as often
+        if (remainingAliens <= 1)
+            actionInterval = 0.1f;
+    }
+
     public void BorderCollision()
     {
+        if (hasCollidedWithBorder)
+        {
+            return;
+        }
+
         moveDirection *= -1; 
 
         foreach (AlienScript alien in aliens)
         {
-            alien.Move(Vector3.down);
+            for(int i=0; i<3; i++)
+            {
+                alien.Move(Vector3.down);
+            }
+            
         }
+
+        hasCollidedWithBorder = true;
     }
 }

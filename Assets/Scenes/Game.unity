@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 191148787}
   - component: {fileID: 191148788}
   - component: {fileID: 191148789}
+  - component: {fileID: 191148790}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -315,6 +316,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::C_TeamMember
   team: 0
+--- !u!114 &191148790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191148781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ffa67c413dd6649b2b22609a613a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::C_Damageable
+  maxHealth: 3
 --- !u!1 &469312564
 GameObject:
   m_ObjectHideFlags: 0

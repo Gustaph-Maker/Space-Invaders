@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 2233740141044396723}
   - component: {fileID: 7891858730695029875}
   - component: {fileID: 6136966608648274855}
+  - component: {fileID: 4472697890158926500}
   m_Layer: 0
   m_Name: Alien
   m_TagString: Alien
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlienScript
   moveDistance: 10
-  shootChance: 25
+  shootChance: 10
 --- !u!114 &2233740141044396723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +256,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::C_Fire
   bulletDirection: {x: 0, y: -1, z: 0}
   bulletPrefab: {fileID: 2864353299407139773, guid: 47b07be3965a06947b49c73aedc6ab06, type: 3}
+--- !u!114 &4472697890158926500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3751426293058323845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ffa67c413dd6649b2b22609a613a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::C_Damageable
+  maxHealth: 1
 --- !u!1 &4928949433803267011
 GameObject:
   m_ObjectHideFlags: 0

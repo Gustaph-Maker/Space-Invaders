@@ -5,6 +5,7 @@ public class BulletScript : MonoBehaviour
     public float bulletSpeed;
     private Vector3 bulletDirection;
     private float offScreen = 6f;
+    private int bulletDamage = 1;
     private GameObject owner;
     private Team ownerTeam;
     private C_Move move;
@@ -48,7 +49,14 @@ public class BulletScript : MonoBehaviour
             return;
         }
 
-        Debug.Log("Bullet hit: " + other.gameObject.name);
+        C_Damageable damageable = other.GetComponentInParent<C_Damageable>();
+
+        if(damageable != null)
+        {
+            damageable.TakeDamage(bulletDamage);
+
+            Destroy(gameObject);
+        }
         
     }
 }

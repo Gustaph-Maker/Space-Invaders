@@ -5,9 +5,9 @@ public class C_Damageable : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 1;
 
-    private int currentHealth;
+    public int currentHealth { get; private set; }
 
-    public event Action<Damage> Died;
+    public event Action<C_Damageable> Died;
 
     private void Start()
     {
